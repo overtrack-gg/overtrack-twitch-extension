@@ -1,14 +1,12 @@
 import json
 import mimetypes
 import os
-from typing import Any, Dict, List, Optional
 
-import typedload
 from werkzeug.wrappers import Request, Response
 from werkzeug.serving import run_simple
 from threading import Thread
 
-from overtrack.overwatch.collect import Game
+from dev_hero_selector import ScoreboardGui
 
 
 class ScoreboardHTTPServer:
@@ -34,21 +32,10 @@ class ScoreboardHTTPServer:
                             enabled = True
                 return Response(''.join(lines), content_type=mimetypes.guess_type(path)[0])
             else:
-                with open(path, 'r') as f:
+                with open(path, 'rb') as f:
                     return Response(f.read(), content_type=mimetypes.guess_type(path)[0])
         elif request.path == '/scoreboard.json':
-            data: Dict[str, Optional[Dict[str, List[Dict[str, Any]]]]]
-            if self.game:
-                data = {
-                    'teams': {
-                        'blue': [typedload.dump(p.stats) for p in self.game.teams.blue],
-                        'red': [typedload.dump(p.stats) for p in self.game.teams.red],
-                    }
-                }
-            else:
-                data = {
-                    'teams': None
-                }
+            data = self.gui.data
             return Response(
                 json.dumps(data),
                 content_type='application/json',
@@ -61,11 +48,9 @@ class ScoreboardHTTPServer:
 
     def __init__(self, address='localhost', port=8000):
         self.thread = Thread(target=run_simple, args=(address, port, self.application), daemon=True)
-        self.thread.start()
-        self.game: Game = None
+        self.gui = ScoreboardGui.create()
+        self.gui.run(with_thread=self.thread)
 
-    def update(self, game: Game):
-        self.game: Game = game
 
-    def clear(self):
-        self.game: Game = None
+if __name__ == '__main__':
+    ScoreboardHTTPServer()
