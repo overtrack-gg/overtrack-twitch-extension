@@ -7,12 +7,10 @@ Player = Dict[str, Union[str, Optional[int]]]
 Team = Dict[str, Dict[str, List[Player]]]
 Callback = Callable[[Team], None]
 
-heroes = sorted(
-    ['dva', 'orisa', 'reinhardt', 'roadhog', 'winston', 'hammond', 'zarya', 'ashe',
-     'bastion', 'doomfist', 'genji', 'hanzo', 'junkrat', 'mccree', 'mei', 'pharah',
-     'reaper', 'soldier', 'sombra', 'symmetra', 'torbjorn', 'tracer', 'widowmaker',
-     'ana', 'baptiste', 'brigitte', 'lucio', 'mercy', 'moira', 'zenyatta']
-)
+heroes = ['dva', 'orisa', 'reinhardt', 'roadhog', 'winston', 'hammond', 'zarya', 'ashe',
+          'bastion', 'doomfist', 'genji', 'hanzo', 'junkrat', 'mccree', 'mei', 'pharah',
+          'reaper', 'soldier', 'sombra', 'symmetra', 'torbjorn', 'tracer', 'widowmaker',
+          'ana', 'baptiste', 'brigitte', 'lucio', 'mercy', 'moira', 'zenyatta']
 
 
 class PlayerPanel(wx.Panel):
