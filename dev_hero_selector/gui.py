@@ -27,7 +27,8 @@ class PlayerPanel(wx.Panel):
         deaths = wx.SpinCtrl(self)
         res_label = wx.StaticText(self, label="Resurrects")
         res = wx.SpinCtrl(self)
-        res.Disable()
+        if data['resurrects'] is None:
+            res.Disable()
 
         sizer = wx.BoxSizer(wx.VERTICAL)
         sizer.Add(name, 0, wx.EXPAND | wx.ALL, 5)
@@ -89,12 +90,13 @@ class ScoreboardGui(wx.Frame):
 
         for team in range(2):
             for player in range(6):
+                is_mercy = team + player == 0
                 data = {
                     'name': f'{["Blue", "Red"][team]} {player + 1}',
-                    'current_hero': 'dva',
+                    'current_hero': 'mercy' if is_mercy else heroes[team * 6 + player],
                     'kills': 0,
                     'deaths': 0,
-                    'resurrects': None
+                    'resurrects': 0 if is_mercy else None
                 }
                 self._data.append(data)
                 panel = PlayerPanel(self, data)
