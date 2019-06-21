@@ -82,7 +82,7 @@ class PlayerPanel(wx.Panel):
 
 class ScoreboardGui(wx.Frame):
     def __init__(self, *, callback: Optional[Callback] = None) -> None:
-        wx.Frame.__init__(self, None)
+        wx.Frame.__init__(self, None, title='Player Selector')
         self.callback = callback
         self._data: List[Player] = []
 
