@@ -1,0 +1,14 @@
+{
+  "files": [
+    "README.md",
+    "CONTRIBUTORS.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributorsPerLine": 7,
+  "projectName": "overtrack-twitch-extension",
+  "projectOwner": "overtrack-gg",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "contributors": []
+}
