@@ -10,5 +10,16 @@
   "projectOwner": "overtrack-gg",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "contributors": []
+  "contributors": [
+    {
+      "login": "synap5e",
+      "name": "Simon Pinfold",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/2515062?v=4",
+      "profile": "https://github.com/synap5e",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    }
+  ]
 }
