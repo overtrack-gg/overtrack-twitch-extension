@@ -48,8 +48,10 @@ class ScoreboardHTTPServer:
 
     def __init__(self, address='localhost', port=8000):
         self.thread = Thread(target=run_simple, args=(address, port, self.application), daemon=True)
+        self.thread.start()
+
         self.gui = ScoreboardGui.create()
-        self.gui.run(with_thread=self.thread)
+        self.gui.run()
 
 
 if __name__ == '__main__':

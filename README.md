@@ -27,7 +27,7 @@ Come say hi!
 Issues are also welcome for ideas, suggestions, and bug reports.
 
 ## Testing your changes
-There are 2 main options for testing your changes as you develop.
+There are 3 options for testing your changes as you develop.
 
 First you can run the extension frame separate from Twitch entirely. 
 This is the most minimal approach and avoids having to have a stream running to develop the extension.
@@ -36,9 +36,17 @@ For this method, you must provide mock data for each player.
 Alternatively you can host the extension locally and create a locally hosted Twitch extension.
 This allows you to test how the extension integrates with a stream.
 
+Finally, you can host the extension as a test extension on Twitch servers, to ensure that everything is working as intended.
+
 When you are happy with your changes, create a Pull Request and hopefully your changes will make it into the next 
 live version of this extension deployed to Twitch. Keep in mind the extension needs to be submitted for review by
 Twitch, so it may take some time between your PR being accepted and the changes making it to live.
+
+Note that parts of the extension use a basic preprocessor to allow running both locally, twitch locally hosted, and twitch hosted.
+For fully local testing, sections of the script surrounded by
+`/* BEGIN: twitch */` and `/* END: twitch */` are excluded. These sections replace the pubsub data with periodic fetching from the local server.
+For hosted testing, twitch requires that no logging is included, so `/* BEGIN: !twitch */` and `/* END: !twitch */` can be used to surround 
+logging and debug sections of the scripts. The build script will remove these sections when creating the assets zip to upload to twtich.
 
 ## Running Locally
 
@@ -51,13 +59,44 @@ Use the Player Selector UI to change properties of the players and watch the sco
 
 ## Running as a Local Twitch Extension
 
-```
-Info coming soon
-```
+To test the extension on Twitch, you must create an extension through the [Twitch Developer Console](https://dev.twitch.tv/console).
+Select the type of extension to be **Video - Component**, and optionally fill out the other fields. 
+Complete the creation of your extension, and you should now have an extension in the **Local Test** phase.
 
-## Running on Twitch
+Install the extension on your own channel using the **View on Twitch and Install* button in the Developer Console.
+You will also need to set the extension as a component and position it under your installed extensions.
 
-You should not need this - deployment is managed by the repository maintainers.
+![activate_extension_position.png](https://raw.githubusercontent.com/overtrack-gg/overtrack-twitch-extension/readme-images/activate_extension_position.png)
+
+Find your extension's **Client ID** (top right in the extension's Developer Console), 
+and a **Client ID Secret** under **Extension Authorization Settings** > **Extension Client Configuration**.
+The **Client ID Secret** should be a base64 encoded string.
+Once you have these, you can run the local server script:
+
+`./local_twitch_extension.py <client_id> <extension_secret> <your_channel_name>` 
+
+Follow the script's instructions for ensuring that the SSL certificate is accepted by your browser.
+
+Start your stream, and you should see the extension icon at the bottom centre of your stream.
+
+You may need to click on it and accept the test extension warning.
+Note that this may have to be accepted *each time* you reload the stream.
+
+![accept_developer_extension.png](https://raw.githubusercontent.com/overtrack-gg/overtrack-twitch-extension/readme-images/accept_developer_extension.png)
+
+
+Finally your extension should display on your stream, and can be updated with the GUI. To modify the extension, simply edit the extension files
+e.g. `main.js` and reload the page.
+![twitch_localhost_extension.png](https://raw.githubusercontent.com/overtrack-gg/overtrack-twitch-extension/readme-images/twitch_localhost_extension.png)
+
+## Running as a Hosted Test Extension
+
+The `./build.py` script can be used to generate a zip file of the assets you must upload. 
+
+## Deploying on Twitch
+
+Unless you are creating a maintained fork of this extension, you should not need to do this.
+Deployment of this extension is managed by the repository maintainers - please PR your changes, and hopefully they can make it into the next release of this extension.
 
 # Support us
 

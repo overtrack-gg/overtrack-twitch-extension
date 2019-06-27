@@ -112,8 +112,7 @@ class ScoreboardGui(wx.Frame):
         cls.app = wx.App()
         return cls()
 
-    def run(self, *, with_thread: Thread) -> None:
-        with_thread.start()
+    def run(self) -> None:
         self.app.MainLoop()
 
     @property

@@ -1,0 +1,5 @@
+werkzeug
+requests
+pyOpenSSL
+pyjwt
+
