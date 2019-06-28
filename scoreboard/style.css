@@ -27,7 +27,7 @@ body {
 	position: relative;
 	top: 0;
 	left: 0;
-	height: 48%;
+	height: 38%;
 	width: 100%;
 }
 
@@ -57,14 +57,14 @@ body {
 	z-index: 2;
 
 	/* Fit to image hexagon width*/
-	width: 62%;
-	margin-right: 38%;
+	width: calc(99vw / 6.5);
+	margin-left: 5%;
 	
-	text-align: center;
-
 	font-family: "Big Noodle Too", impact, sans-serif;
 	font-size: 18pt;
-	font-size: 3vw;
+	font-size: 2.5vw;
+	line-height: 2.5vw;
+	overflow:hidden;
 }
 
 .player > :not(.name) {
@@ -73,9 +73,9 @@ body {
 	font-size: 2.6vw;
 	
 	text-shadow:
-	0 0 10px black, 
-	0 0 15px black,
-	0 0 10px black;
+	0 0 10px white, 
+	0 0 15px white,
+	0 0 10px white;
 }
 
 .team-blue > .player > .name {
@@ -104,23 +104,36 @@ body {
 }
 
 .team-blue > .player > .hero {
-	background-image: url("./heroes/blue_blank.png");
+	background-image: url("./heroes/blue/blue_blank.png");
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 .team-red > .player > .hero {
-	background-image: url("./heroes/red_blank.png");
+	background-image: url("./heroes/red/red_blank.png");
+	-webkit-background-size: contain;
+	-moz-background-size: contain;
+	-o-background-size: contain;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 .player > .kills {
-	left: 80.5%;
-	top: calc(21%);
+	left: 43%;
+	top: calc(32%);
+	color: black;
 }
 
 .player > .deaths {
-	left: 80.5%;
-	top: calc(21% + 26% * 1);
+	left: 43%;
+	top: calc(32% + 26%);
+	color: black;
 }
 
 .player > .resurrects {
-	left: 80.5%;
-	top: calc(21% + 26% * 2);
+	left: 79%;
+	top: calc(21% + 26%);
+	color: black;
 } 
