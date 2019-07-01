@@ -78,7 +78,6 @@ function onMessage(data){
             let kills = element.getElementsByClassName('kills')[0];
             let deaths = element.getElementsByClassName('deaths')[0];
             let resurrects = element.getElementsByClassName('resurrects')[0];
-            let dead = element.getElementsByClassName('dead')[0];
 
             name.innerText = player.name;
             hero.className = 'hero hero-' + player.current_hero;
@@ -87,8 +86,10 @@ function onMessage(data){
             resurrects.innerText = player.resurrects;
             if (player.current_hero === 'mercy'){
                 resurrects.style.display = 'block';
+                element.classList.add('show-resurrects');
             } else {
                 resurrects.style.display = 'none';
+                element.classList.remove('show-resurrects');
             }
         }
     } else {

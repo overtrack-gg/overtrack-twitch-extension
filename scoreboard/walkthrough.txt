@@ -1,7 +1,0 @@
-The extension displays an overlay of players and their heroes, kills, and deaths in an Overwatch competitive match.
-
-All data is provided to the extension through pubsub (broadcasts) by the EBS.
-The overlay is not interactive.
-
-The provided review channel has a looped video of a competitive game, along with the EBS providing the relevant events for that video updating the overlay.
-If you happen to tune in as the match starts or ends the extension may have hidden itself, just wait a little bit for the game to (re)start and the overlay to become active - I've tried to trim the video to minimize this time.
