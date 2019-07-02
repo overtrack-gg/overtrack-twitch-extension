@@ -42,8 +42,8 @@ When you are happy with your changes, create a Pull Request and hopefully your c
 live version of this extension deployed to Twitch. Keep in mind the extension needs to be submitted for review by
 Twitch, so it may take some time between your PR being accepted and the changes making it to live.
 
-Note that parts of the extension use a basic preprocessor to allow running both locally, twitch locally hosted, and twitch hosted.
-For fully local testing, sections of the script surrounded by
+Note that parts of the extension use a basic preprocessor to allow running locally without twitch, locally hosted on twitch, and twitch hosted.
+For local testing without twitch, sections of the script surrounded by
 `/* BEGIN: twitch */` and `/* END: twitch */` are excluded. These sections replace the pubsub data with periodic fetching from the local server.
 For hosted testing, twitch requires that no logging is included, so `/* BEGIN: !twitch */` and `/* END: !twitch */` can be used to surround 
 logging and debug sections of the scripts. The build script will remove these sections when creating the assets zip to upload to twtich.
@@ -63,7 +63,7 @@ To test the extension on Twitch, you must create an extension through the [Twitc
 Select the type of extension to be **Video - Component**, and optionally fill out the other fields. 
 Complete the creation of your extension, and you should now have an extension in the **Local Test** phase.
 
-Install the extension on your own channel using the **View on Twitch and Install* button in the Developer Console.
+Install the extension on your own channel using the **View on Twitch and Install** button in the Developer Console.
 You will also need to set the extension as a component and position it under your installed extensions.
 
 ![activate_extension_position.png](https://raw.githubusercontent.com/overtrack-gg/overtrack-twitch-extension/readme-images/activate_extension_position.png)
