@@ -17,9 +17,10 @@ body {
 }
 
 .scoreboard {
-	/* Ratio is 4:1 */
-	width: 99vw;
-	height: 20vw;
+    width: 45%;
+    padding-left: 0.25%;
+    margin-top: 1%;
+	height: 18%;
 	background-color: rgba(255, 255, 255, 0%);
 }
 
@@ -27,12 +28,12 @@ body {
 	position: relative;
 	top: 0;
 	left: 0;
-	height: 48%;
+	height: 50%;
 	width: 100%;
 }
 
 .scoreboard > :nth-child(1){
-	margin-bottom: calc(0.05 * 25vw); /* gap of 5% of absolute height between rows */
+	margin-bottom: 0.5%;
 }
 .player::before {
 	/* Parallelogram */
@@ -55,7 +56,7 @@ body {
 	position: relative;
 	top: 0;
 	left: 0;
-	width: calc(98vw / 6);
+	width: 16%;
 	height: 100%;
 	float: left;
 }
@@ -71,13 +72,13 @@ body {
 
 .player > .name {
 	z-index: 20;
-	margin-top: 38%;
+	margin-top: 48%;
 	margin-left: 13%;
 	width: 85%;
 	text-align: center;
 	font-family: "Big Noodle Too", impact, sans-serif;
-	font-size: 18pt;
-	font-size: 3vw;
+	font-size: 9pt;
+	font-size: 1.5vw;
 }
 .team-blue > .player > .name {
 	text-shadow: 
@@ -139,8 +140,8 @@ body {
 
 .player > :not(.name) {
 	font-family: "FuturaNo2D", impact, sans-serif;
-	font-size: 15pt;
-	font-size: 2.6vw;
+	font-size: 7pt;
+	font-size: 1.3vw;
 	
 	text-shadow:
 	0 0 10px black, 
@@ -149,16 +150,16 @@ body {
 }
 
 .player > .kills {
-	left: 28%;
-	top: calc(0%);
+	left: 30%;
+	top: calc(2%);
 }
 
 .player > .deaths {
-	left: 28%;
-	top: calc(32%);
+	left: 30%;
+	top: calc(34%);
 }
 
 .player > .resurrects {
-	left: 57%;
-	top: calc(0%);
+	left: 66%;
+	top: calc(2%);
 } 

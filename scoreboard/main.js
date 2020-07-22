@@ -108,8 +108,8 @@ window.onload = function() {
 
 		window.Twitch.ext.onAuthorized(function(auth) {
 			window.setInterval(function(){
-			    if (!lastUpdate || (new Date().getTime()) - lastUpdate > 60 * 1000){
-			        // no update for the last 60s - EBS is offline
+			    if (!lastUpdate || (new Date().getTime()) - lastUpdate > 120 * 1000){
+			        // no update for the last 2min - EBS is offline
 			        document.getElementsByClassName('scoreboard')[0].style.display = 'none';
 			    }
 			}, 15 * 1000);

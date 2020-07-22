@@ -16,6 +16,8 @@ from werkzeug.wrappers import Request, Response
 from dev_hero_selector import ScoreboardGui
 
 PORT = 8080
+TWITCH_ENDPOINT_OAUTH = 'https://id.twitch.tv/oauth2/token'
+
 
 class ScoreboardTwitchExtensionServer:
 
@@ -56,17 +58,30 @@ def main() -> None:
     print()
 
     if '--live' not in sys.argv:
-        if len(sys.argv) != 4:
+        if len(sys.argv) != 5:
             print('-' * 32)
             print('You need to provide your twitch API client ID if not running in "live data" mode. '
                   'You can find this on the first page when you create a new extension, '
                   'or regenerate it under "Extension Authorization Settings" on your extension\'s Developer Console')
+            exit(0)
 
-        client_id, secret_encoded, channel = sys.argv[1:]
-        secret = base64.b64decode(secret_encoded)
+        client_id, client_secret, extension_secret_encoded, channel = sys.argv[1:]
+        extension_secret = base64.b64decode(extension_secret_encoded)
 
-        twitch = requests.Session()
-        twitch.headers.update({'Client-ID': client_id})
+        token_r = requests.post(
+            TWITCH_ENDPOINT_OAUTH,
+            params=dict(
+                client_id=client_id,
+                client_secret=client_secret,
+                grant_type='client_credentials',
+            )
+        )
+        token_r.raise_for_status()
+        twitch = requests.session()
+        twitch.headers.update({
+            'Authorization': f'Bearer {token_r.json()["access_token"]}',
+            'Client-ID': client_id,
+        })
 
         r = twitch.get('https://api.twitch.tv/helix/users?login=' + channel)
         r.raise_for_status()
@@ -99,13 +114,15 @@ def main() -> None:
                     'targets': ['broadcast']
                 },
                 headers={
-                    'Authorization': 'Bearer ' + jwt.encode(auth, secret).decode()
+                    'Authorization': 'Bearer ' + jwt.encode(auth, extension_secret).decode()
                 }
             )
             try:
                 r.raise_for_status()
             except Exception as e:
                 logging.exception(f'Failed to publish update: {r.text}', exc_info=e)
+            else:
+                logging.debug(f' > {r.status_code}')
 
         def update_loop():
             while True:
@@ -133,4 +150,9 @@ def main() -> None:
 
 
 if __name__ == '__main__':
+    try:
+        from overtrack.util.logging_config import config_logger
+        config_logger(os.path.basename(__file__).split('.')[0], logging.DEBUG)
+    except:
+        pass
     main()
