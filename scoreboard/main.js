@@ -117,9 +117,7 @@ function onMessage(data){
         sr_change.innerText = data.postgame.description;
         duration.innerText = data.postgame.duration;
 
-        let stretched_link = postgame.getElementsByClassName('stretched-link')[0];
         let link = postgame.getElementsByClassName('link')[0];
-        stretched_link.href = data.postgame.link;
         link.href = data.postgame.link;
 
         let stats_block = postgame.getElementsByClassName('stats')[0];

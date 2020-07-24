@@ -403,6 +403,8 @@ body {
 	padding: 0.35vw;
 	padding-left: 2.1vw;
 	position: relative;
+	color: #222222;
+	font-weight: 600;
 }
 
 .lastgame .stats .stat::after {
@@ -424,11 +426,19 @@ body {
 	left: 0.36vw;
 	position: absolute;
 	font-family: 'Roboto', sans-serif;
-	padding: 0.36vw;
+	margin-top: 0.36vw;
+	margin-bottom: 0.36vw;
+	padding-left: 0.36vw;
+	padding-right: 0.36vw;
 	font-family: 'Roboto', sans-serif;
-	font-size: 1.2vw;
+	font-size: 1vw;
 	font-weight: 400;
 	line-height: 1.5;
+	background-color: #222222;
+	border-left: 0.35vw solid #222222;
+	border-right: 0.35vw solid #222222;
+	border-radius: 0.28vw;
+	font-style: italic;
 }
 
 .lastgame-support .stats .header,
@@ -456,10 +466,13 @@ body {
 
 .lastgame-support .link {
 	color: #4ba5c8;
+	border-color: #4ba5c8;
 }
 .lastgame-tank .link {
 	color: #e1af41;
+	border-color: #e1af41;
 }
 .lastgame-dps .link {
 	color: #e164aa;
+	border-color: #e164aa;
 }
