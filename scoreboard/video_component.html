@@ -9,10 +9,16 @@
 	<style>
 		body {
 			/* force 16:9 */
-			margin: 1px;
 			width: 100vw;
 			height: 56vw;
 			border: solid;
+		}
+
+		.extension-container {
+			position: absolute;
+			width: 100vw;
+			height: 56vw;
+			box-sizing: border-box;
 		}
 	</style>
 	<!-- END: !twitch -->
@@ -108,7 +114,58 @@
 					<div class="resurrects" style="display: none;">0</div>
 				</div>
 			</div>
-		</div>  
+		</div>
+		<div class="lastgame">
+			<div class="game-summary">
+				<div class="row">
+					<div class="thumbnail">
+						<div class="wedge"></div>
+						<div class="hero-icon">
+							<div class="hero-icon-background"></div>
+							<img class="hero-icon-image" src="">
+						</div>
+					</div>
+					<div class="col">
+						<div class="details">
+							<h3 class="game-result"></h3>
+							<h6 class="game-time"></h6>
+							<div class="card-text">
+								<span class="sr-change"></span>
+								<h6 class="duration"></h6>
+							</div>
+						</div>
+					</div>
+					<a href="" class="stretched-link"></a>
+				</div>
+			</div>
+			<div class="stats">
+				<div class="row">
+					<div class="header"></div>
+					<div class="stat"></div>
+				</div>
+				<div class="row">
+					<div class="header"></div>
+					<div class="stat"></div>
+				</div>
+				<div class="row">
+					<div class="header"></div>
+					<div class="stat"></div>
+				</div>
+				<div class="row">
+					<div class="header"></div>
+					<div class="stat"></div>
+				</div>
+				<div class="row">
+					<div class="header"></div>
+					<div class="stat"></div>
+				</div>
+				<div class="row">
+					<div class="header"></div>
+					<div class="stat"></div>
+				</div>
+			</div>
+			<a href="" class="link">View full match details</a>
+		</div>
 	</div>
 	<!-- BEGIN: twitch -->
 	<script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>

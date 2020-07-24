@@ -95,6 +95,51 @@ function onMessage(data){
     } else {
         scoreboard.style.display = 'none';
     }
+
+    let postgame = document.getElementsByClassName('lastgame')[0];
+    if (data.postgame){
+        postgame.style.display = 'flex';
+        postgame.className = 'lastgame lastgame-' + data.postgame.role
+            + ' lastgame-' + data.postgame.result;
+
+        let thumbnail = postgame.getElementsByClassName('thumbnail')[0];
+        thumbnail.style.backgroundImage = `url(./images/map_thumbnails/${data.postgame.map.replace(' ', '-')}.jpg)`;
+        let hero_icon_image = thumbnail.getElementsByClassName('hero-icon-image')[0];
+        hero_icon_image.src = `./images/heroes/${data.postgame.hero}.png`;
+
+        let game_result = postgame.getElementsByClassName('game-result')[0];
+        let game_time = postgame.getElementsByClassName('game-time')[0];
+        let sr_change = postgame.getElementsByClassName('sr-change')[0];
+        let duration = postgame.getElementsByClassName('duration')[0];
+        game_result.innerText = data.postgame.result.toUpperCase();
+        game_time.innerText = new Date(data.postgame.timestamp * 1000)
+            .toLocaleString('default', {hour: 'numeric', minute: '2-digit'});
+        sr_change.innerText = data.postgame.description;
+        duration.innerText = data.postgame.duration;
+
+        let stretched_link = postgame.getElementsByClassName('stretched-link')[0];
+        let link = postgame.getElementsByClassName('link')[0];
+        stretched_link.href = data.postgame.link;
+        link.href = data.postgame.link;
+
+        let stats_block = postgame.getElementsByClassName('stats')[0];
+        let rows = stats_block.getElementsByClassName('row');
+        let headers = stats_block.getElementsByClassName('header');
+        let stats = stats_block.getElementsByClassName('stat');
+
+        for (var i = 0; i < 6; i++) {
+            if (i >= data.postgame.stats.length) {
+                rows[i].style.display = 'none';
+                continue;
+            }
+
+            headers[i].innerText = data.postgame.stats[i].key;
+            let stat = data.postgame.stats[i].value;
+            stats[i].innerText = stat === null ? '?' : stat;
+        }
+    } else {
+        postgame.style.display = 'none';
+    }
 }
 
 var latestContext = null;

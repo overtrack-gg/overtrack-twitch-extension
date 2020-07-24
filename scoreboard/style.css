@@ -163,3 +163,303 @@ body {
 	left: 66%;
 	top: calc(2%);
 } 
+
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+.lastgame {
+	position: absolute;
+	bottom: 0.6vh;
+	left: 0.3vw;
+	display: flex;
+}
+
+.lastgame .game-summary {
+	flex: 1 0 0%;
+	height: 5.7vw;
+	margin: 0.3vw;
+	border-radius: 0.3vw;
+	border: hidden;
+	overflow: hidden;
+	background-color: #222222;
+	color: #fff;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	background-clip: border-box;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2vw;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: left;
+}
+
+.lastgame .game-summary .row {
+	height: 100%;
+	margin-right: 0;
+	margin-left: 0;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.lastgame .thumbnail {
+	background-color: #222854;
+	display: block;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 7.85vw;
+	min-width: 7.85vw;
+	max-width: 7.85vw;
+	height: 100%;
+	overflow: visible;
+	padding-right: 0;
+	padding-left: 0;
+	flex-basis: 0;
+	flex-grow: 1;
+	position: relative;
+}
+
+.lastgame .thumbnail .wedge {
+	left: 6.07vw;
+    border: 0;
+    height: 100%;
+    position: relative;
+    transform: skewX(-20deg);
+    border-radius: 0;
+	background-color: #222222;
+	width: 300%;
+}
+
+.lastgame .thumbnail .hero-icon {
+	float: right;
+    right: 0.29vw;
+    position: absolute;
+    top: 1.07vw;
+    width: 3.57vw;
+	height: 3.57vw;
+}
+
+.lastgame .thumbnail .hero-icon-background {
+	z-index: 0;
+    transform: skewX(-20deg);
+    border-color: rgba(255,255,255,0.5);
+    border-style: solid;
+    border-width: 0.14vw;
+    height: 100%;
+	width: 90%;
+}
+
+.lastgame-support .hero-icon-background {
+	background-color: #4ba5c8;
+}
+.lastgame-tank .hero-icon-background {
+	background-color: #e1af41;
+}
+.lastgame-dps .hero-icon-background {
+	background-color: #e164aa;
+}
+
+.lastgame .thumbnail .hero-icon-image {
+	position: absolute;
+	left: -0.5vw;
+	top: 0.14vw;
+	z-index: 1;
+	height: 100%;
+	clip-path: polygon(32% 0%, 112% 0%, 79% 100%, 0% 100%);
+	vertical-align: middle;
+	border-style: none;
+}
+
+.lastgame .game-summary .col {
+	height: 100%;
+	padding-right: 0;
+	padding-left: 0;
+	flex-basis: 0;
+	flex-grow: 1;
+	max-width: 100%;
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+.lastgame .game-summary .details {
+	height: 100%;
+	padding: 0.71vw;
+	padding-left: 1.43vw;
+	flex: 1 1 auto;
+	display: block;
+}
+
+.lastgame .game-summary .game-result {
+	margin-bottom: 0.36vw;
+	display: inline-block;
+	font-size: 2.1vw;
+	font-weight: 500;
+	line-height: 1.2;
+	margin-top: 0;
+}
+
+.lastgame-win .game-summary .game-result {
+	color: #1fc91c;
+}
+
+.lastgame-loss .game-summary .game-result {
+	color: #c62723;
+}
+
+.lastgame-draw .game-summary .game-result {
+	color: #f89406;
+}
+
+.lastgame-unk .game-summary .game-result {
+	color: #e305f8;
+}
+
+.lastgame .game-summary .game-time {
+	color: #c0c4c7;
+	padding-top: 0.29vw;
+	margin: 0;
+	float: right;
+	font-size: 1.2vw;
+	font-weight: 500;
+}
+
+.lastgame .game-summary .card-text {
+	margin-bottom: 0;
+}
+
+.lastgame .game-summary .duration {
+	color: #c0c4c7;
+	float: right;
+	font-size: 1.2vw;
+	margin-left: 1vw;
+	font-weight: 500;
+	margin-top: 0;
+}
+
+.lastgame .stretched-link {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	pointer-events: auto;
+	content: "";
+	background-color: rgba(0,0,0,0);
+}
+
+.lastgame .stats {
+	height: 5.7vw;
+	margin: 0.3vw;
+	border: hidden;
+	color: #fff;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-clip: border-box;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.3vw;
+	font-weight: 500;
+	line-height: 1.5;
+	text-align: left;
+}
+
+.lastgame .stats .row {
+	display: flex;
+	width: 100%;
+	min-width: 100%;
+}
+
+.lastgame .stats .header {
+	border-top-left-radius: 0.28vw;
+	border-bottom-left-radius: 0.28vw;
+	background-color: #222222;
+	border-left: 0.35vw solid #4ba5c8;
+	padding: 0.35vw;
+	position: relative;
+	width: 100%;
+}
+
+.lastgame .stats .header::after {
+	z-index: 1;
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(34, 34, 34, 0);
+	border-left-color: #222222;
+	border-width: 1.35vw;
+	margin-top: -1.35vw;
+}
+
+.lastgame .stats .stat {
+	margin-right: 2.1vw;
+	padding: 0.35vw;
+	padding-left: 2.1vw;
+	position: relative;
+}
+
+.lastgame .stats .stat::after {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(34, 34, 34, 0);
+	border-width: 1.35vw;
+	margin-top: -1.35vw;
+}
+
+.lastgame .link {
+	top: -1.8vw;
+	left: 0.36vw;
+	position: absolute;
+	font-family: 'Roboto', sans-serif;
+	padding: 0.36vw;
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.2vw;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+.lastgame-support .stats .header,
+.lastgame-support .stats .stat::after {
+	border-left-color: #4ba5c8;
+}
+.lastgame-tank .stats .header,
+.lastgame-tank .stats .stat::after {
+	border-left-color: #e1af41;
+}
+.lastgame-dps .stats .header,
+.lastgame-dps .stats .stat::after {
+	border-left-color: #e164aa;
+}
+
+.lastgame-support .stats .stat {
+	background-color: #4ba5c8;
+}
+.lastgame-tank .stats .stat {
+	background-color: #e1af41;
+}
+.lastgame-dps .stats .stat {
+	background-color: #e164aa;
+}
+
+.lastgame-support .link {
+	color: #4ba5c8;
+}
+.lastgame-tank .link {
+	color: #e1af41;
+}
+.lastgame-dps .link {
+	color: #e164aa;
+}
