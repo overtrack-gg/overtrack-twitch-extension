@@ -8,7 +8,7 @@ Team = Dict[str, Dict[str, List[Player]]]
 Callback = Callable[[Team], None]
 
 heroes = ['dva', 'orisa', 'reinhardt', 'roadhog', 'winston', 'hammond', 'zarya', 'ashe',
-          'bastion', 'doomfist', 'genji', 'hanzo', 'junkrat', 'mccree', 'mei', 'pharah',
+          'bastion', 'doomfist', 'echo', 'genji', 'hanzo', 'junkrat', 'mccree', 'mei', 'pharah',
           'reaper', 'soldier', 'sombra', 'symmetra', 'torbjorn', 'tracer', 'widowmaker',
           'ana', 'baptiste', 'brigitte', 'lucio', 'mercy', 'moira', 'zenyatta']
 

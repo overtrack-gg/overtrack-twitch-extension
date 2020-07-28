@@ -162,7 +162,27 @@ body {
 .player > .resurrects {
 	left: 66%;
 	top: calc(2%);
-} 
+}
+
+.powered-by {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8vw;
+    color: #e1af41;
+    float: right;
+    margin-top: 2px;
+    margin-right: 1.2vw;
+    background-color: #222222ab;
+    border-left: 0.35vw;
+    border-right: 0.35vw;
+    border-radius: 0.28vw;
+    padding: 1px;
+    padding-left: 0.3vw;
+    padding-right: 0.3vw;
+}
+.powered-by .link {
+    color: #e1af41;
+    font-style: italic;
+}
 
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
 .lastgame {

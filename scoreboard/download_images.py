@@ -41,7 +41,10 @@ def main():
             ('moira',           False),
             ('zenyatta',        False),
         ]:
-            p = f'./images/heroes/{hero}.png'
+            name = hero
+            if hero == 'wrecking-ball':
+                name = 'hammond'
+            p = f'./images/heroes/{name}.png'
             if not os.path.exists(p):
                 r = s.get(f'https://d1u1mce87gyfbn.cloudfront.net/hero/{hero}/icon-portrait.png')
                 r.raise_for_status()
@@ -49,8 +52,8 @@ def main():
                 if flip:
                     image = image[:, ::-1]
                 cv2.imwrite(p, image)
-            f.write(f'''.player > .hero-{hero} {{
-	background-image: url("./images/heroes/{hero}.png");
+            f.write(f'''.player > .hero-{name} {{
+	background-image: url("./images/heroes/{name}.png");
 }}
 ''')
 
