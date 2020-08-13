@@ -60,13 +60,11 @@ Use the Player Selector UI to change properties of the players and watch the sco
 ## Running as a Local Twitch Extension
 
 To test the extension on Twitch, you must create an extension through the [Twitch Developer Console](https://dev.twitch.tv/console).
-Select the type of extension to be **Video - Component**, and optionally fill out the other fields. 
+Select the type of extension to be **Video - Fullscreen**, and optionally fill out the other fields. 
 Complete the creation of your extension, and you should now have an extension in the **Local Test** phase.
+Make sure the *Asset Hosting* tab has `Video - Fullscreen Viewer Path` set to `overlay.html`, and `Config Path` set to `config.html`. 
 
 Install the extension on your own channel using the **View on Twitch and Install** button in the Developer Console.
-You will also need to set the extension as a component and position it under your installed extensions.
-
-![activate_extension_position.png](https://raw.githubusercontent.com/overtrack-gg/overtrack-twitch-extension/readme-images/activate_extension_position.png)
 
 Find your extension's **Client ID** (top right in the extension's Developer Console), 
 and a **Client ID Secret** under **Extension Authorization Settings** > **Extension Client Configuration**.
@@ -100,4 +98,4 @@ Deployment of this extension is managed by the repository maintainers - please P
 
 # Support us
 
-If you like OverTrack, consider becoming a [subscriber](https://overtrack.gg/subscribe). 
+If you like OverTrack, consider becoming a [subscriber](https://overtrack.gg/subscribe), or donating on [kofi](https://ko-fi.com/synap5e).

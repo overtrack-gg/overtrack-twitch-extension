@@ -278,7 +278,7 @@ body {
 .lastgame-tank .hero-icon-background {
 	background-color: #e1af41;
 }
-.lastgame-dps .hero-icon-background {
+.lastgame-damage .hero-icon-background {
 	background-color: #e164aa;
 }
 
@@ -473,8 +473,8 @@ body {
 .lastgame-tank .stats .stat::after {
 	border-left-color: #e1af41;
 }
-.lastgame-dps .stats .header,
-.lastgame-dps .stats .stat::after {
+.lastgame-damage .stats .header,
+.lastgame-damage .stats .stat::after {
 	border-left-color: #e164aa;
 }
 
@@ -484,7 +484,7 @@ body {
 .lastgame-tank .stats .stat {
 	background-color: #e1af41;
 }
-.lastgame-dps .stats .stat {
+.lastgame-damage .stats .stat {
 	background-color: #e164aa;
 }
 
@@ -496,7 +496,7 @@ body {
 	color: #e1af41;
 	border-color: #e1af41;
 }
-.lastgame-dps .link {
+.lastgame-damage .link {
 	color: #e164aa;
 	border-color: #e164aa;
 }

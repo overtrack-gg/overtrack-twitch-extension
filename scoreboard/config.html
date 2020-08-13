@@ -4,9 +4,52 @@
     <title>Config Page</title>
 </head>
 <body style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: black;">
-    <h2>This extension is in closed beta.</h2>
-    <h2>Please contact Muon#0001 on Discord about getting your stream set up.</h2>
     <script src="https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js"></script>
     <script src="config.js"></script>
+
+    <div class="status" style="height: 200px; display: block;">
+        <div class="loading">
+            Checking OverTrack client status...
+        </div>
+        <div class="account-found" style="display: none;">
+            <p>
+                Congratulations, it looks like you have the OverTrack client set up and linked to your Twitch account.
+            </p>
+            <p>
+                Start streaming with the client running, and the overlay should work. Remember your game needs to be in 16:9 English.
+            </p>
+            <p>
+                Your most recent game tracked (if any) will display below.
+            </p>
+            <img class="last-game" style="height: 80px; display: block;"/>
+        </div>
+        <div class="account-not-found" style="display: none;">
+            <p>
+                It appears you have not run the OverTrack client on an account linked to your twitch account.
+            </p>
+            <p>
+                You can download the OverTrack client <a href="https://overtrack.gg/client">here</a>.
+            <p/>
+            <p>
+                Once installed, sign in using Twitch when prompted.
+                Once the OverTrack client is running, you can reload this page to check if things are working.
+            </p>
+            <small>
+                If you are already using the OverTrack client, but sign in through Battle.net, you will can link your Twitch account
+                <a href="https://api2.overtrack.gg/login/battlenet?next=https://api2.overtrack.gg/login/twitch">here</a>.
+            </small>
+        </div>
+    </div>
+    <hr/>
+    <div class="extra">
+        <p>
+            Please join the <a href="http://overtrack.gg/discord">OverTrack Discord</a> for support and any feedback or suggestions you have.
+        </p>
+        <p>
+            This extension (frontend) is available <a href="https://github.com/overtrack-gg/overtrack-twitch-extension">on GitHub</a>.
+            PRs are welcome, and if you have an idea that would require additional backend/data feel free to raise a PR.
+        </p>
+    </div>
+
 </body>
 </html>

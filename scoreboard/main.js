@@ -31,7 +31,7 @@ function onMessage(data){
 		let offset = data.timestamp - currentFrameTimestamp;
 
         // log event received timings
-        if (lastMessage && data.postgame){
+        if (lastMessage && lastMessage.teams && data.teams){
             let shownTime = false;
             for (let i=0; i < 12; i++){
                 let team = data.teams.blue;
