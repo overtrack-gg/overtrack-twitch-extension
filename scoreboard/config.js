@@ -11,8 +11,8 @@ twitch.onContext(function(context) {
 });
 
 twitch.onAuthorized(function(auth) {
-	//fetch('https://api.overtrack.gg/overwatch_twitch_extension/check_twitch_user', {
-	fetch('http://localhost:5001/overwatch_twitch_extension/check_twitch_user', {
+	fetch('https://api2.overtrack.gg/overwatch_twitch_extension/check_twitch_user', {
+	// fetch('http://localhost:5001/overwatch_twitch_extension/check_twitch_user', {
 		method: 'POST',
 		headers: {
 			'content-type': 'application/json',
