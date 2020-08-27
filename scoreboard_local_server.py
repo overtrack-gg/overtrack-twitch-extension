@@ -15,7 +15,7 @@ class ScoreboardHTTPServer:
     def application(self, request: Request):
         path = request.path
         if request.path == '/':
-            path = '/video_component.html'
+            path = '/overlay.html'
         path = os.path.join(os.path.dirname(__file__), 'scoreboard', os.path.normpath(path)[1:])
 
         if os.path.exists(path):
