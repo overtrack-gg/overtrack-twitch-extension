@@ -17,10 +17,11 @@ body {
 }
 
 .scoreboard {
-    width: 45%;
-    padding-left: 0.25%;
-    margin-top: 1%;
-	height: 18%;
+	opacity: 0.8;
+	width: 38.25%;
+	padding-left: 0.25%;
+	margin-top: 1%;
+	height: 15.3%;
 	background-color: rgba(255, 255, 255, 0%);
 }
 
@@ -77,8 +78,7 @@ body {
 	width: 85%;
 	text-align: center;
 	font-family: "Big Noodle Too", impact, sans-serif;
-	font-size: 9pt;
-	font-size: 1.5vw;
+	font-size: 1.25vw;
 }
 .team-blue > .player > .name {
 	text-shadow: 
@@ -194,6 +194,7 @@ body {
 	bottom: 0.6vh;
 	left: 0.3vw;
 	display: flex;
+	opacity: 0.8;
 }
 
 .lastgame .game-summary {
