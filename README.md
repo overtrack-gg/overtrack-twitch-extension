@@ -6,7 +6,7 @@ OverTrack Twitch Scoreboard
 [![Discord chat](https://img.shields.io/badge/chat-on_discord-008080.svg?style=flat-square)](https://discord.gg/JywstAB)
 
 Install the extension here
-https://www.twitch.tv/ext/eug7fim8pj2b6w2od8ht1vk3aga3ad
+https://dashboard.twitch.tv/extensions/cj6g8ron4bsqfn2oquxblhhjvkaa1y-0.0.1
 
 ![twitch_ui.png](https://raw.githubusercontent.com/overtrack-gg/overtrack-twitch-extension/readme-images/twitch_ui.png)
 
