@@ -4,6 +4,9 @@ const twitch = window.Twitch.ext;
 	var vertical = false;
 
 	window.onload = function () {
+		if (vertical) {
+			document.getElementById("checkbox").checked = vertical;
+		}
 		document.getElementById('saveBtn').addEventListener('click', function () {
 			if (document.getElementById(verticalBtn).checked) {
 				twitch.configuration.set("broadcaster", "", true);
@@ -22,8 +25,8 @@ const twitch = window.Twitch.ext;
 	});
 
 	twitch.configuration.onChanged(function () {
-        vertical = twitch.configuration.broadcaster ? twitch.configuration.broadcaster.content : ""
-    })
+		vertical = twitch.configuration.broadcaster ? twitch.configuration.broadcaster.content : false
+	})
 
 	twitch.onAuthorized(function (auth) {
 		fetch('https://api2.overtrack.gg/overwatch_twitch_extension/check_twitch_user', {
@@ -54,6 +57,4 @@ const twitch = window.Twitch.ext;
 			}
 		});
 	});
-
-
 })()

@@ -16,11 +16,20 @@ body {
 	font-style: normal; 
 }
 
-.scoreboard {
+.scoreboard.vertical {
 	opacity: 0.8;
 	width: 100%;
 	padding-left: 0.25%;
 	margin-top: 1.5%;
+	height: 15.3%;
+	background-color: rgba(255, 255, 255, 0%);
+}
+
+.scoreboard {
+	opacity: 0.8;
+	width: 38.25%;
+	padding-left: 0.25%;
+	margin-top: 1%;
 	height: 15.3%;
 	background-color: rgba(255, 255, 255, 0%);
 }
@@ -171,9 +180,18 @@ body {
 	top: calc(2%);
 }
 
+.powered-by-container.vertical {
+	position: absolute;
+	top: 0;
+	left: 45vw;
+	background-color: rgba(22, 22, 22, 0.8);
+}
 .powered-by-container {
 	position: absolute;
 	top: 0;
+	left: 33.3vw;
+	transform: skew(15deg) translateX(9%);
+	background-color: #222222;
 	left: 45vw;
 	background-color: rgba(22, 22, 22, 0.8);
 }
