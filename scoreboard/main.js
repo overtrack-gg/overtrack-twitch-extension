@@ -6,6 +6,7 @@
 
     twitch.configuration.onChanged(function () {
         vertical = twitch.configuration.broadcaster ? twitch.configuration.broadcaster.content : false;
+        updateLayout();
     });
 
     function updateLayout()
