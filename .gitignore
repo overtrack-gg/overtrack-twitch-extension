@@ -2,3 +2,5 @@
 scoreboard/build/
 *.crt
 *.key
+
+dev_hero_selector/__pycache__/
